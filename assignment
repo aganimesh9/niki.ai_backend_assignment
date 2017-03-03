@@ -1,0 +1,23 @@
+def assignment():
+    t = int(input())
+    n = []
+    values = []
+    for i in range(t):
+        n.append(int(input()))
+        values.append(bit_string(n[i]))
+    for i in values:
+        print(i%(pow(10, 9)+7))
+def bit_string(p):
+    #if (p <= 100003):
+        a = 2
+        b = 3
+        c = b
+        for i in range(p - 2):
+            c = a + b
+            a = b
+            b = c
+        if (p > 1):
+            return (c)
+        else:
+            return (2)
+assignment()
