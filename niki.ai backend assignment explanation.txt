@@ -1,0 +1,11 @@
+for any given n, we can split the answer cases in 2 categories:
+Case 1: when the first digit is 1, then the remaining (n-1) positions will be filled by the same number of ways as the required answer when input n = (n-1)
+Case 2: when the first digit is 0, then the second digit can be nothing but 1, then the remaining (n-2) positions will be filled by the same number of ways as the required answer when input n = (n-2)
+Required answer for given n = number of possibilities in Case 1 + number of possibilities in Case 2
+			    = required answer for (n-1) + required answer for (n-2)
+Therefore it becomes a case of recursion.
+We can further observe the recursion case to see that required answer of each n is the sum of the preceeding 2 answers, thus it is a fibonacci series with different initial values, 
+when n=1, output=2
+     n=2, output=3
+     n=3, output=2+3=5
+     and so on.
